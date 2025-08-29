@@ -1,0 +1,15 @@
+c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\bin\Debug\net9.0\ConsoleTaskManager.exe
+c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\bin\Debug\net9.0\ConsoleTaskManager.deps.json
+c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\bin\Debug\net9.0\ConsoleTaskManager.runtimeconfig.json
+c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\bin\Debug\net9.0\ConsoleTaskManager.dll
+c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\bin\Debug\net9.0\ConsoleTaskManager.pdb
+c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\obj\Debug\net9.0\ConsoleTaskManager.GeneratedMSBuildEditorConfig.editorconfig
+c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\obj\Debug\net9.0\ConsoleTaskManager.AssemblyInfoInputs.cache
+c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\obj\Debug\net9.0\ConsoleTaskManager.AssemblyInfo.cs
+c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\obj\Debug\net9.0\ConsoleTaskManager.csproj.CoreCompileInputs.cache
+c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\obj\Debug\net9.0\ConsoleTaskManager.sourcelink.json
+c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\obj\Debug\net9.0\ConsoleTaskManager.dll
+c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\obj\Debug\net9.0\refint\ConsoleTaskManager.dll
+c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\obj\Debug\net9.0\ConsoleTaskManager.pdb
+c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\obj\Debug\net9.0\ConsoleTaskManager.genruntimeconfig.cache
+c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\obj\Debug\net9.0\ref\ConsoleTaskManager.dll
