@@ -9,10 +9,11 @@ Log.Logger = new LoggerConfiguration()
     rollOnFileSizeLimit: true)
   .CreateLogger();
 
+ITodoRepository todoRepository = new InMemoryTodoRepositry();
 
 try
 {
-  // Your program here...
+  // The program goes here...
   ConsoleLoop();
   // const string name = "Serilog";
   // Log.Information("Hello, {Name}!", name);
@@ -32,7 +33,7 @@ void ConsoleLoop()
   ConsoleKeyInfo Key = new ConsoleKeyInfo();
 
   // The app flow
-  while (Key.KeyChar != 'q')
+  while (Key.KeyChar != 'q') // q for quit
   {
     Console.WriteLine("What do you want to do?");
     Console.WriteLine("(1) Get ToDo's");
@@ -56,7 +57,11 @@ void ConsoleLoop()
       {
         newTodo.DueDate = result;
       }
-      Log.Information("Task created: Title: {@Title}, Description: {Description}", newTodo.Title, newTodo.Description);
+
+      todoRepository.Add(newTodo);
+      Log.Information("Task created: Title: {@Title}, Description: {Description}",
+        newTodo.Title,
+        newTodo.Description);
     }
 
   }
