@@ -19,6 +19,7 @@ while (Key.KeyChar != 'q')
   Console.WriteLine("(1) Get ToDo's");
   Console.WriteLine("(2) Create a ToDo");
   Console.WriteLine("(3) Update ToDo");
+  Console.WriteLine("(q) OR Ctrl + C to quit");
   Key = Console.ReadKey();
   Console.WriteLine(Key.KeyChar);
 
