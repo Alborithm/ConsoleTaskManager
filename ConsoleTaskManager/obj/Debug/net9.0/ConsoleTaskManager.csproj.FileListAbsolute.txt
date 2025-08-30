@@ -13,3 +13,8 @@ c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\obj\Debug\net9.0\refint\Conso
 c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\obj\Debug\net9.0\ConsoleTaskManager.pdb
 c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\obj\Debug\net9.0\ConsoleTaskManager.genruntimeconfig.cache
 c:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\obj\Debug\net9.0\ref\ConsoleTaskManager.dll
+C:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\bin\Debug\net9.0\Serilog.dll
+C:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\bin\Debug\net9.0\Serilog.Sinks.Console.dll
+C:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\bin\Debug\net9.0\Serilog.Sinks.File.dll
+C:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\obj\Debug\net9.0\ConsoleTaskManager.csproj.AssemblyReference.cache
+C:\Dev\repos\ConsoleTaskManager\ConsoleTaskManager\obj\Debug\net9.0\ConsoleT.E1CCC99C.Up2Date
