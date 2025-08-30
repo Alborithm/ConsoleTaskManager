@@ -51,7 +51,7 @@ while (Key.KeyChar != 'q')
     Console.WriteLine(newTodo.Title);
     Console.WriteLine(newTodo.Description);
     Console.WriteLine(newTodo.DueDate);
-    Console.WriteLine(newTodo.Status);
+    Console.WriteLine(newTodo.IsComplete);
   }
 
 }
