@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Dev\\repos\\ConsoleTaskManager\\ConsoleTaskManager\\ConsoleTaskManager.csproj": {}
+    "C:\\Dev\\repos\\ConsoleTaskManager\\ConsoleTaskManager\\ConsoleTaskManager.csproj": {}
   },
   "projects": {
-    "c:\\Dev\\repos\\ConsoleTaskManager\\ConsoleTaskManager\\ConsoleTaskManager.csproj": {
+    "C:\\Dev\\repos\\ConsoleTaskManager\\ConsoleTaskManager\\ConsoleTaskManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Dev\\repos\\ConsoleTaskManager\\ConsoleTaskManager\\ConsoleTaskManager.csproj",
+        "projectUniqueName": "C:\\Dev\\repos\\ConsoleTaskManager\\ConsoleTaskManager\\ConsoleTaskManager.csproj",
         "projectName": "ConsoleTaskManager",
-        "projectPath": "c:\\Dev\\repos\\ConsoleTaskManager\\ConsoleTaskManager\\ConsoleTaskManager.csproj",
+        "projectPath": "C:\\Dev\\repos\\ConsoleTaskManager\\ConsoleTaskManager\\ConsoleTaskManager.csproj",
         "packagesPath": "C:\\Users\\albor\\.nuget\\packages\\",
-        "outputPath": "c:\\Dev\\repos\\ConsoleTaskManager\\ConsoleTaskManager\\obj\\",
+        "outputPath": "C:\\Dev\\repos\\ConsoleTaskManager\\ConsoleTaskManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Users\\albor\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
