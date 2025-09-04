@@ -64,6 +64,15 @@ void ConsoleLoop()
         newTodo.Description);
     }
 
+    if (Key.KeyChar == '1')
+    {
+      var todos = todoRepository.GetAll();
+      foreach (var todo in todos)
+      {
+        Console.WriteLine(todo.Title);
+      }
+    }
+
   }
 
   string PromptUser(string text)

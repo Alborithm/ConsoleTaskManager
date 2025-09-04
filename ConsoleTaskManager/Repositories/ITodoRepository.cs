@@ -9,7 +9,7 @@ public interface ITodoRepository
 {
   void Add(Todo todo);
   void Update(Todo todo);
-  void Delete(int key);
-  Todo GetTodo(int key);
+  void Delete(int id);
+  Todo GetTodo(int id);
   IEnumerable<Todo> GetAll();
 }

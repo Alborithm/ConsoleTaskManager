@@ -2,28 +2,28 @@ using ConsoleTaskManager.Models;
 
 public class InMemoryTodoRepositry : ITodoRepository
 {
-  private readonly Dictionary<int, Todo> _todos = new();
+  private readonly List<Todo> _todos = new();
+  private int _autoIncrement = 0;
 
   public void Add(Todo todo)
   {
-    _todos.Add(_todos.Keys.LastOrDefault(0) + 1, todo);
-
-    Console.WriteLine(_todos[1].Title);
+    todo.Id = ++_autoIncrement;
+    _todos.Add(todo);
   }
 
-  public void Delete(int key)
+  public void Delete(int id)
   {
-    throw new NotImplementedException();
+    _todos.Remove(GetTodo(id));
   }
 
   public IEnumerable<Todo> GetAll()
   {
-    throw new NotImplementedException();
+    return _todos;
   }
 
-  public Todo GetTodo(int key)
+  public Todo GetTodo(int id)
   {
-    throw new NotImplementedException();
+    return _todos.Find(t => t.Id == id);
   }
 
   public void Update(Todo todo)
