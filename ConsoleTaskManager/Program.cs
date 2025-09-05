@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using Serilog;
 using ConsoleTaskManager.Models;
+using System.Runtime.CompilerServices;
 
 Log.Logger = new LoggerConfiguration()
   .WriteTo.Console()
@@ -67,9 +68,11 @@ void ConsoleLoop()
     if (Key.KeyChar == '1')
     {
       var todos = todoRepository.GetAll();
+      Console.WriteLine();
+      Console.WriteLine("{0,5}|{1,20}|{2,30}|{3,9}|{4,15}", "Id", "Title", "Description", "Completed", "Due Date");
       foreach (var todo in todos)
       {
-        Console.WriteLine(todo.Title);
+        PrintTodo(todo);
       }
     }
 
@@ -80,4 +83,19 @@ void ConsoleLoop()
     Console.WriteLine(text);
     return Console.ReadLine();
   }
+}
+
+void PrintTodo(Todo todo)
+{
+  Console.WriteLine("{0,-5}|{1,20}|{2,30}|{3,9}|{4,15}",
+    todo.Id,
+    todo.Title,
+    todo.Description,
+    todo.IsComplete ? "Yes" : "No",
+    todo.DueDate.ToShortDateString());
+}
+
+void TestTasks()
+{
+  
 }
