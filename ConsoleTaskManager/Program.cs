@@ -12,6 +12,9 @@ Log.Logger = new LoggerConfiguration()
 
 ITodoRepository todoRepository = new InMemoryTodoRepositry();
 
+// Remove later, this adds some test tasks to the repository
+TestTasks();
+
 try
 {
   // The program goes here...
@@ -40,7 +43,7 @@ void ConsoleLoop()
     Console.WriteLine("(1) Get ToDo's");
     Console.WriteLine("(2) Create a ToDo");
     Console.WriteLine("(3) Update ToDo");
-    Console.WriteLine("(q) OR Ctrl + C to quit");
+    Console.WriteLine("(q) or Ctrl + C to quit");
 
     Key = Console.ReadKey();
 
@@ -69,7 +72,7 @@ void ConsoleLoop()
     {
       var todos = todoRepository.GetAll();
       Console.WriteLine();
-      Console.WriteLine("{0,5}|{1,20}|{2,30}|{3,9}|{4,15}", "Id", "Title", "Description", "Completed", "Due Date");
+      Console.WriteLine("{0,5}|{1,20}|{2,40}|{3,9}|{4,15}", "Id", "Title", "Description", "Completed", "Due Date");
       foreach (var todo in todos)
       {
         PrintTodo(todo);
@@ -87,7 +90,7 @@ void ConsoleLoop()
 
 void PrintTodo(Todo todo)
 {
-  Console.WriteLine("{0,-5}|{1,20}|{2,30}|{3,9}|{4,15}",
+  Console.WriteLine("{0,-5}|{1,20}|{2,40}|{3,9}|{4,15}",
     todo.Id,
     todo.Title,
     todo.Description,
@@ -97,5 +100,15 @@ void PrintTodo(Todo todo)
 
 void TestTasks()
 {
-  
+  todoRepository.Add(new Todo
+  {
+    Title = "Task 1",
+    Description = "Description 1",
+  });
+  todoRepository.Add(new Todo
+  {
+    Title = "Programmed task",
+    Description = "Remeber to do this",
+    DueDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day + 2)
+  });
 }
