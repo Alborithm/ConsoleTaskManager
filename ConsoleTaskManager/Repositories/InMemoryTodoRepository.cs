@@ -28,6 +28,7 @@ public class InMemoryTodoRepositry : ITodoRepository
 
   public void Update(Todo todo)
   {
-    throw new NotImplementedException();
+    Todo todoForUpdate = GetTodo(todo.Id);
+    todoForUpdate = todo;
   }
 }
