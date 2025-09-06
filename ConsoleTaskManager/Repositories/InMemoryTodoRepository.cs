@@ -1,5 +1,7 @@
 using ConsoleTaskManager.Models;
 
+namespace ConsoleTaskManager.Repositories;
+
 public class InMemoryTodoRepositry : ITodoRepository
 {
   private readonly List<Todo> _todos = new();

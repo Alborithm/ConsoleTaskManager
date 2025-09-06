@@ -4,6 +4,7 @@ using ConsoleTaskManager.Models;
 using System.Runtime.CompilerServices;
 using System.Data;
 using ConsoleTaskManager.Enums;
+using ConsoleTaskManager.Repositories;
 using Serilog.Core;
 
 Log.Logger = new LoggerConfiguration()
