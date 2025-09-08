@@ -235,7 +235,7 @@ void UpdateTodo(Todo todo, UpdateOptions option)
       Console.WriteLine("(1) Yes");
       Console.WriteLine("(2) No");
       var key = Console.ReadKey();
-      if (key.KeyChar == 1)
+      if (key.KeyChar == '1')
       {
         todoRepository.Delete(todo.Id);
         Console.WriteLine("Deleted");

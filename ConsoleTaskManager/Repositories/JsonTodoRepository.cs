@@ -8,7 +8,6 @@ namespace ConsoleTaskManager.Repositories;
 
 public class JsonTodoRepository : ITodoRepository
 {
-  // private readonly List<Todo> _todos;
 
   private static readonly JsonSerializerOptions _options = new()
   {
@@ -17,11 +16,6 @@ public class JsonTodoRepository : ITodoRepository
 
   private static readonly string _filePath =
     Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "ConsoleTaskManager", "data.json");
-
-  public JsonTodoRepository()
-  {
-    // _todos = JsonSerializer.Deserialize<List<Todo>>(_filePath);
-  }
 
   public void Add(Todo todo)
   {
@@ -47,25 +41,52 @@ public class JsonTodoRepository : ITodoRepository
 
   public void Delete(int id)
   {
-    throw new NotImplementedException();
+    using FileStream fs = File.Open(_filePath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+    if (fs.Length == 0)
+      return;
+
+    List<Todo> existingTodos = JsonSerializer.Deserialize<List<Todo>>(fs)!;
+    existingTodos.RemoveAt(
+      existingTodos.FindIndex(t => t.Id == id)
+    );
+
+    fs.SetLength(0);
+    JsonSerializer.Serialize(fs, existingTodos, _options);
   }
 
   public IEnumerable<Todo> GetAll()
   {
-    using FileStream readStream = File.OpenRead(_filePath);
-    var array = JsonSerializer.Deserialize<IEnumerable<Todo>>(readStream);
-    return array.ToList();
+    using FileStream fs = File.Open(_filePath, FileMode.Open, FileAccess.Read);
+    if (fs.Length < 0)
+    {
+      return new List<Todo>();
+    }
+    return JsonSerializer.Deserialize<List<Todo>>(fs)!;
   }
 
   public Todo GetTodo(int id)
   {
-    using FileStream readStream = File.OpenRead(_filePath);
-    return JsonSerializer.Deserialize<Todo>(readStream);
+    using FileStream fs = File.Open(_filePath, FileMode.OpenOrCreate, FileAccess.Read);
+    if (fs.Length == 0)
+      return new Todo();
+    return JsonSerializer.Deserialize<List<Todo>>(fs)!.Find(t => t.Id == id)!;
   }
 
   public void Update(Todo todo)
   {
-    throw new NotImplementedException();
+    using FileStream fs = File.Open(_filePath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+    if (fs.Length == 0)
+      return;
+    List<Todo> existingTodos = JsonSerializer.Deserialize<List<Todo>>(fs)!;
+
+    var updatedTodo = existingTodos.Find(t => t.Id == todo.Id);
+    updatedTodo.Title = todo.Title;
+    updatedTodo.Description = todo.Description;
+    updatedTodo.IsComplete = todo.IsComplete;
+    updatedTodo.DueDate = todo.DueDate;
+
+    fs.SetLength(0);
+    JsonSerializer.Serialize(fs, existingTodos, _options);
   }
 
   private void TestSubjects()
@@ -108,18 +129,5 @@ public class JsonTodoRepository : ITodoRepository
     fs.SetLength(0);
     JsonSerializer.Serialize(fs, readTodos, _options);
     fs.Flush();
-  }
-
-  private void Rename()
-  {
-    using FileStream fs = File.Open(_filePath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-    var existingTodos = new List<Todo>();
-    if (fs.Length > 0) // If there are already contents
-    {
-      existingTodos = JsonSerializer.Deserialize<List<Todo>>(fs);
-      // Empty the file stream for full rewrite
-      fs.SetLength(0);
-    }
-
   }
 }
