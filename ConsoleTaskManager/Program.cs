@@ -14,10 +14,11 @@ Log.Logger = new LoggerConfiguration()
     rollOnFileSizeLimit: true)
   .CreateLogger();
 
-ITodoRepository todoRepository = new InMemoryTodoRepositry();
+// ITodoRepository todoRepository = new InMemoryTodoRepositry();
+ITodoRepository todoRepository = new JsonTodoRepository();
 
 // Remove later, this adds some test tasks to the repository
-TestTasks();
+// TestTasks();
 
 try
 {
