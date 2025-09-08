@@ -9,7 +9,8 @@ using Serilog.Core;
 
 Log.Logger = new LoggerConfiguration()
   .WriteTo.Console()
-  .WriteTo.File("log.txt",
+  .WriteTo.File(
+    Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "ConsoleTaskManager", "log.txt"),
     rollingInterval: RollingInterval.Day,
     rollOnFileSizeLimit: true)
   .CreateLogger();
