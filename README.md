@@ -14,6 +14,7 @@ A lightweight task management application built as a console app in C#.
 - C# 12
 - .NET 8 Console Application
 - System.Text.Json for persistence
+- Logging with Serilog
 
 ## Getting Started
 1. Clone the repo:
